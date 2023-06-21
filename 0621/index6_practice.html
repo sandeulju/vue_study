@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>global, local Component</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{message}}</h3>
+      <global-component></global-component>
+      <local-component></local-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      Vue.component("global-component", {
+        template: "<p>Global Component Success</p>",
+      });
+
+      const cmp = {
+        template: "<p>Local Component Success</p>",
+      };
+
+      new Vue({
+        el: "#app",
+        data: {
+          message: "let's Make two different Components!",
+        },
+      });
+
+      new Vue({
+        el: "#app",
+        components: {
+          "local-component": cmp,
+        },
+      });
+    </script>
+  </body>
+</html>
