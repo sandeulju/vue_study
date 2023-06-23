@@ -21,6 +21,26 @@
         template: "<p>{{propsdata}}</p>", // 5. child-component의 template 속성에 정의된 <p>{{propsdata}}</p> 는 Hello~~ 가 됩니다.
       });
 
+      {
+        /*
+        1. 컴포넌트 생성
+        Vue.component('child-component', {
+          props: ['props 속성 이름']
+        })
+
+        2. 새로 만든 컴포넌트에 v-bind
+        <child-component v-bind:props 속성 이름="상위 컴포넌트의 data 속성"></child-component>
+
+        3. new Vue({
+          el:'#app',
+          data: {
+            message: 'Hello Vue js!'
+          }
+        })
+
+      */
+      }
+
       new Vue({
         // 1. new Vue()로 인스턴스를 하나 생성합니다.
         // 인스턴스에 새로운 컴포넌트를 등록하면 기존에 있는 컴포넌트는 상위 컴포넌트가 되고,
